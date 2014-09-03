@@ -1,0 +1,29 @@
+<style>
+  .point-box{
+    width:50px;
+    height:50px;
+    color:white;
+    font-size: 26px;
+    font-weight: 700;
+    background-color: #f0b840;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 5px;
+  }
+</style>
+<ion-view title="ANKET">
+  <ion-content class="has-header">
+    <div class="list">
+      <a class="row item item-icon-right" ng-repeat="survey in surveys" href="#/tab/survey/{{survey.id}}">
+        <div class="col col-20">
+          <div class="point-box">{{ survey.upcoin }}</div>
+        </div>
+        <div class="col col-80">
+          <h2>{{ survey.name }}</h2>
+          <p>{{ survey.time }}</p>
+          <i class="icon ion-chevron-right"></i>
+        </div>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

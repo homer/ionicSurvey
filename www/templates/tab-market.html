@@ -1,0 +1,13 @@
+<ion-view title="MARKET">
+  <ion-content class="has-header">
+    <div class="list">
+      <a class="item item-avatar item-icon-right" ng-repeat="gift in gifts" href="#/tab/gifts/{{gift.id}}">
+        <img src="{{gift.image}}">
+        <h2>{{gift.name}}</h2>
+        <h3>{{gift.upcoin}} UPCOIN</h3>
+        <button class="button button-small button-balanced">Satin Al</button>
+        <i class="icon ion-chevron-right"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
