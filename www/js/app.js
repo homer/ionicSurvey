@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('surveyup', ['ionic', 'surveyup.controllers', 'surveyup.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,6 +23,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .config(function($stateProvider, $urlRouterProvider) {
 
+
+// if none of the above states are matched, use this as the fallback
+$urlRouterProvider
+    .when('/app/info', '/app/info/faq')
+    .otherwise('/welcome');
 // if none of the above states are matched, use this as the fallback
 // Ionic uses AngularUI Router which uses the concept of states
 // Learn more here: https://github.com/angular-ui/ui-router
@@ -30,16 +35,34 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 // Each state's controller can be found in controllers.js
 $stateProvider
 
+    .state('welcome', {
+      url: "/welcome",
+      templateUrl: "templates/welcome.html",
+      controller: "WelcomeCtrl"
+    })
+
+    .state('getnumber', {
+      url: "/getnumber",
+      templateUrl: "templates/get-number.html",
+      controller: "GetNumberCtrl"
+    })
+
+    .state('codeconfirm', {
+      url: "/codeconfirm",
+      templateUrl: "templates/code-confirm.html",
+      controller: "CodeConfirmCtrl"
+    })
+
   // setup an abstract state for the tabs directive
-    .state('tab', {
-      url: "/tab",
+    .state('app', {
+      url: "/app",
       abstract: true,
       templateUrl: "templates/tabs.html"
     })
 
   // Each tab has its own nav history stack:
 
-    .state('tab.survey', {
+    .state('app.survey', {
       url: '/survey',
       views: {
         'tab-survey': {
@@ -48,7 +71,7 @@ $stateProvider
         }
       }
     })
-    .state('tab.survey-questions', {
+    .state('app.survey-questions', {
       url: '/survey/:surveyId',
       views: {
         'tab-survey': {
@@ -58,7 +81,7 @@ $stateProvider
       }
     })
 
-    .state('tab.market', {
+    .state('app.market', {
       url: '/market',
       views: {
         'tab-market': {
@@ -68,7 +91,7 @@ $stateProvider
       }
     })
 
-    .state('tab.profile', {
+    .state('app.profile', {
       url: '/profile',
       views: {
         'tab-profile': {
@@ -78,7 +101,7 @@ $stateProvider
       }
     })
 
-    .state('tab.info', {
+    .state('app.info', {
       url: '/info',
       views: {
         'tab-info': {
@@ -86,9 +109,20 @@ $stateProvider
           controller: 'InfoCtrl'
         }
       }
+    })
+
+    .state('app.info.faq', {
+      url: '/faq',
+      templateUrl: 'templates/sec-faq.html',
+      controller: 'InfoFaqCtrl'
+    })
+
+    .state('app.info.privacy', {
+      url: '/privacy',
+      templateUrl: 'templates/sec-privacy.html',
+      controller: 'InfoPrivacyCtrl'
     });
 
-    // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/survey');
+
 
 });

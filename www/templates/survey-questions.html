@@ -1,5 +1,35 @@
-<ion-view title="SURVEY">
+<ion-view>
   <ion-content class="has-header padding">
-    <h1>SurveyId: {{surveyId}}</h1>
+    <h3>{{focusQuestion.q}}</h3>
+
+    <!-- coktan secmeli - radio -->
+    <ul class="list" ng-show="focusQuestion.type == 1">
+      <li class="item item-radio" ng-repeat="answer in focusQuestion.a">
+        <input type="radio" name="group">
+        <div class="item-content">
+          {{answer}}
+        </div>
+        <i class="radio-icon ion-checkmark"></i>
+      </li>
+    </ul>
+
+    <!-- coklu secmeli - checkbox -->
+    <ul class="list" ng-show="focusQuestion.type == 2">
+      <li class="item item-checkbox" ng-repeat="answer in focusQuestion.a">
+        <label class="checkbox">
+          <input type="checkbox">
+        </label>
+        {{answer}}
+      </li>
+    </ul>
+
+    <!-- metin - text -->
+    <div class="list" ng-show="focusQuestion.type == 3">
+      <label class="item item-input">
+        <textarea placeholder="Kisa Metin"></textarea>
+      </label>
+    </div>
+
+    <button class="button" ng-click="nextQuestion()">Sonraki Soru</button>
   </ion-content>
 </ion-view>

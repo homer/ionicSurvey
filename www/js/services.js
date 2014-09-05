@@ -1,12 +1,7 @@
-angular.module('starter.services', [])
+angular.module('surveyup.services', [])
 
-/**
- * A simple example service that returns some data.
- */
 .factory('Gifts', function() {
-  // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
   var gifts = [
     { id: 0,
       name: 'Dominos Bedava Pizza',
@@ -69,9 +64,7 @@ angular.module('starter.services', [])
 })
 
 .factory('Surveys', function() {
-  // Might use a resource here that returns a JSON array
 
-  // Some fake testing data
   var surveys = [
     { id: 0,
       name: 'Elektrikli Otomobiller',

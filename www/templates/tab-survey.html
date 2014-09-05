@@ -14,7 +14,7 @@
 <ion-view title="ANKET">
   <ion-content class="has-header">
     <div class="list">
-      <a class="row item item-icon-right" ng-repeat="survey in surveys" href="#/tab/survey/{{survey.id}}">
+      <a class="row item item-icon-right" ng-repeat="survey in surveys" ui-sref="app.survey-questions({surveyId:survey.id})">
         <div class="col col-20">
           <div class="point-box">{{ survey.upcoin }}</div>
         </div>
