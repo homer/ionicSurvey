@@ -1,0 +1,8 @@
+<div class="list">
+  <div class="item item-avatar" ng-repeat="gift in gifts">
+    <img src="{{gift.image}}">
+    <h2>{{gift.name}}</h2>
+    <h3 style="color:orange;">{{gift.upcoin}} UPCOIN</h3>
+    <button class="button button-small button-balanced" ng-click="buyGift(gift.id)">Satin Al</button>
+  </div>
+</div>

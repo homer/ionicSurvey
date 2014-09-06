@@ -1,6 +1,29 @@
+<style>
+.logo{
+  width:300px;
+  margin:0 auto;
+}
+</style>
 <div class="padding">
-  <h1 style="text-align: center;">Please confirm Code</h1>
-  <button class="button button-block button-balanced" ng-click="startSurveyApp();">
-    Uygulamaya Gir
-  </button>
+  <div class="logo">
+    <img src="img/survey_logo.jpg" width="300"/>
+  </div>
+  <p>Sana gönderdiğimiz şifreyi yaz</p>
+  <div class="list">
+    <label class="item item-input">
+      <input type="text" placeholder="Örnek: 123456">
+    </label>
+  </div>
+  <div class="row">
+    <div class="col col-50">
+      <button class="button button-block button-energized" ng-click="startSurveyApp();">
+        TEKRAR GÖNDER
+      </button>
+    </div>
+    <div class="col col-50">
+      <button class="button button-block button-balanced" ng-click="startSurveyApp();">
+        AKTİVE ET
+      </button>
+    </div>
+  </div>
 </div>

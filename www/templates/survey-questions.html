@@ -1,5 +1,20 @@
+<style>
+  .progressBar{
+    width:100%;
+    height:15px;
+    background-color: lightskyblue;
+  }
+  .progressed{
+    width:30%;
+    height:15px;
+    background-color: royalblue;
+  }
+</style>
 <ion-view>
   <ion-content class="has-header padding">
+    <div class="progressBar">
+      <div class="progressed"></div>
+    </div>
     <h3>{{focusQuestion.q}}</h3>
 
     <!-- coktan secmeli - radio -->

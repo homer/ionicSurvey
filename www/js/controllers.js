@@ -69,14 +69,52 @@ angular.module('surveyup.controllers', [])
   }
 })
 
-.controller('MarketCtrl', function($scope, Gifts) {
+.controller('MarketCtrl', function($scope, $location) {
+  $scope.isActive = function(urlLoc){
+    return urlLoc == $location.path()
+  };
+})
+
+.controller('ItemsMarketCtrl', function($scope, Gifts, $ionicPopup, $timeout) {
+  $scope.gifts = Gifts.all();
+
+  $scope.buyGift = function(giftId) {
+    console.log(giftId);
+    $scope.data = {}
+
+    var confirmPopup = $ionicPopup.confirm({
+      title: "Hediye Satın Alma",
+      template: "<b>Dominos Bedava Pizza</b>'yı<br/>20 Upcoin'e almak ister misiniz?",
+      cancelText: "Vazgeç",
+      okText: "Satın al"
+    });
+
+    confirmPopup.then(function(res) {
+      if(res) {
+        console.log('You are sure');
+      } else {
+        console.log('You are not sure');
+      }
+    });
+  }
+
+
+
+
+})
+.controller('ItemsUserCtrl', function($scope, Gifts) {
   $scope.gifts = Gifts.all();
 })
+
 
 .controller('ProfileCtrl', function($scope) {
 })
 
-.controller('InfoCtrl', function($scope) {
+.controller('InfoCtrl', function($scope, $location) {
+  $scope.type = 'faq';
+  $scope.isActive = function(urlLoc){
+    return urlLoc == $location.path()
+  };
 })
 
 .controller('InfoFaqCtrl', function($scope, $ionicNavBarDelegate) {

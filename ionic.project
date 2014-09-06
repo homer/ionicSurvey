@@ -1,4 +1,5 @@
 {
   "name": "myTabs",
-  "app_id": ""
+  "app_id": "",
+  "sass": true
 }

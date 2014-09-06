@@ -1,8 +1,8 @@
 <ion-view title="BİLGİ">
   <ion-content class="has-header">
     <div class="button-bar padding">
-      <a class="button" ui-sref="app.info.faq">Sıkça Sorulan Sorular</a>
-      <a class="button" ui-sref="app.info.privacy">Gizlilik Sözleşmesi</a>
+      <a class="button" ng-class="{ active: isActive('/app/info/faq')}" ui-sref="app.info.faq" ng-click="setType($event)">Sıkça Sorulan Sorular</a>
+      <a class="button" ng-class="{ active: isActive('/app/info/privacy')}" ui-sref="app.info.privacy" ng-click="setType($event)">Gizlilik Sözleşmesi</a>
     </div>
     <div ui-view></div>
   </ion-content>

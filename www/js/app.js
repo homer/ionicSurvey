@@ -27,6 +27,7 @@ angular.module('surveyup', ['ionic', 'surveyup.controllers', 'surveyup.services'
 // if none of the above states are matched, use this as the fallback
 $urlRouterProvider
     .when('/app/info', '/app/info/faq')
+    .when('/app/market', 'app/market/marketitems')
     .otherwise('/welcome');
 // if none of the above states are matched, use this as the fallback
 // Ionic uses AngularUI Router which uses the concept of states
@@ -89,6 +90,18 @@ $stateProvider
           controller: 'MarketCtrl'
         }
       }
+    })
+
+    .state('app.market.marketitems', {
+      url: '/marketitems',
+      templateUrl: 'templates/sec-itemsmarket.html',
+      controller: 'ItemsMarketCtrl'
+    })
+
+    .state('app.market.useritems', {
+      url: '/useritems',
+      templateUrl: 'templates/sec-itemsuser.html',
+      controller: 'ItemsUserCtrl'
     })
 
     .state('app.profile', {

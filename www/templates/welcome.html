@@ -1,6 +1,36 @@
+<style>
+  .logo{
+    width:300px;
+    margin:0 auto;
+  }
+  .slider{
+    width:275px;
+    height:300px;
+    margin:0 auto;
+  }
+</style>
 <div class="padding">
-  <h1 style="text-align: center;">Welcome to surveyup</h1>
+  <div class="logo">
+    <img src="img/survey_logo.jpg" width="300"/>
+  </div>
+  <ion-slide-box on-slide-changed="slideHasChanged($index)">
+    <ion-slide>
+      <div class="box blue">
+        <img src="img/slide_1.jpg" width="275"/>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="box yellow">
+        <img src="img/slide_2.jpg" width="275"/>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="box pink">
+        <img src="img/slide_3.jpg" width="275"/>
+      </div>
+    </ion-slide>
+  </ion-slide-box>
   <button class="button button-block button-balanced" ng-click="goGetNumber();">
-    Uygulamaya Gir
+    HEMEN BAŞLA
   </button>
 </div>

@@ -1,13 +1,14 @@
+<style>
+  .item-icon-right .icon {
+    font-size: 16px;
+  }
+</style>
 <ion-view title="MARKET">
   <ion-content class="has-header">
-    <div class="list">
-      <a class="item item-avatar item-icon-right" ng-repeat="gift in gifts" href="#/tab/gifts/{{gift.id}}">
-        <img src="{{gift.image}}">
-        <h2>{{gift.name}}</h2>
-        <h3>{{gift.upcoin}} UPCOIN</h3>
-        <button class="button button-small button-balanced">Satin Al</button>
-        <i class="icon ion-chevron-right"></i>
-      </a>
+    <div class="button-bar padding">
+      <a class="button" ng-class="{ active: isActive('/app/market/marketitems')}" ui-sref="app.market.marketitems">Market</a>
+      <a class="button" ng-class="{ active: isActive('/app/market/useritems')}" ui-sref="app.market.useritems">Satın Aldıklarım</a>
     </div>
+    <div ui-view></div>
   </ion-content>
 </ion-view>

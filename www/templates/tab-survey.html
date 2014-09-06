@@ -2,13 +2,25 @@
   .point-box{
     width:50px;
     height:50px;
+    padding:3px;
     color:white;
     font-size: 26px;
     font-weight: 700;
     background-color: #f0b840;
-    line-height: 50px;
     text-align: center;
     border-radius: 5px;
+    line-height: 40%;
+  }
+  .point-inner{
+    width:44px;
+    height:44px;
+    padding: 4px;
+    border:2px solid white;
+    border-radius: 3px;
+    padding-top: 10px;
+  }
+  .item-icon-right .icon {
+    font-size: 16px;
   }
 </style>
 <ion-view title="ANKET">
@@ -16,7 +28,12 @@
     <div class="list">
       <a class="row item item-icon-right" ng-repeat="survey in surveys" ui-sref="app.survey-questions({surveyId:survey.id})">
         <div class="col col-20">
-          <div class="point-box">{{ survey.upcoin }}</div>
+          <div class="point-box">
+            <div class="point-inner">
+              {{ survey.upcoin }}<br/>
+              <span style="font-size:7px;">UPCOIN</span>
+            </div>
+          </div>
         </div>
         <div class="col col-80">
           <h2>{{ survey.name }}</h2>
